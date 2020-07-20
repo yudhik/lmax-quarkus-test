@@ -1,0 +1,1 @@
+# lmax-quarkus-test
