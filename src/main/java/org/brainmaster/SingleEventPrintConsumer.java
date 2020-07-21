@@ -10,9 +10,11 @@ public class SingleEventPrintConsumer {
 
   @SuppressWarnings("unchecked")
   public EventHandler<ValueEvent>[] getEventHandler() {
-    EventHandler<ValueEvent> handler =
-        (event, sequence, endOfBatch) -> print(event.getValue(), sequence);
-    return new EventHandler[] {handler};
+    EventHandler<ValueEvent>[] handlers = new EventHandler[1];
+    for (int i = 0; i < 1; i++) {
+      handlers[i] = (event, sequence, endOfBatch) -> print(event.getValue(), sequence);
+    }
+    return handlers;
   }
 
   private void print(int id, long sequenceId) {

@@ -16,7 +16,7 @@ public class ApplicationConfiguration {
   public RingBuffer<ValueEvent> createValueEventRingBuffer() {
     final ThreadFactory threadFactory = DaemonThreadFactory.INSTANCE;
     @SuppressWarnings("unchecked")
-    Disruptor<ValueEvent> disruptor = new Disruptor<>(ValueEvent.EVENT_FACTORY, 16, threadFactory,
+    Disruptor<ValueEvent> disruptor = new Disruptor<>(ValueEvent.EVENT_FACTORY, 64, threadFactory,
         ProducerType.SINGLE, new BusySpinWaitStrategy());
     disruptor.handleEventsWith(new SingleEventPrintConsumer().getEventHandler());
     return disruptor.start();
