@@ -32,13 +32,21 @@
   </dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-resteasy</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.lmax</groupId>
       <artifactId>disruptor</artifactId>
       <version>${disruptor.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-mutiny</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy-mutiny</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-smallrye-context-propagation</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
